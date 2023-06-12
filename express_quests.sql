@@ -4,9 +4,9 @@ CREATE TABLE movies (
   id int primary key NOT NULL AUTO_INCREMENT,
   title varchar(255) NOT NULL,
   director varchar(255) NOT NULL,
-  year varchar(255) NOT NULL,
-  color varchar(255) NOT NULL,
-  duration int NOT NULL
+  year INTEGER NOT NULL,
+  color TINYINT NOT NULL,
+  duration INTEGER NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb3;
 
 INSERT INTO
