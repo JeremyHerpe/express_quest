@@ -1,3 +1,6 @@
+const database = require("./database");
+
+//_________________________________________________________________________________________MOVIE VALIDATION
 const validateMovie = (req, res, next) => {
   const { title, director, year, color, duration } = req.body;
   const errors = [];
@@ -39,6 +42,8 @@ const validateMovie = (req, res, next) => {
   }
 };
 
+//________________________________________________________________________________________USER VALIDATION
+
 const validateUser = (req, res, next) => {
   const { firstname, lastname, email, city, language } = req.body;
   const errors = [];
@@ -60,6 +65,8 @@ const validateUser = (req, res, next) => {
       message: "Should contain less than 255 characters",
     });
   }
+
+  //______________________________________________________________________________________ EMAIL VALIDATION
 
   const emailRegex = /[a-z0-9._]+@[a-z0-9-]+\.[a-z]{2,3}/;
 
