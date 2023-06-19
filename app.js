@@ -56,13 +56,6 @@ app.post(
   userHandlers.getUserByEmailWithPasswordAndPassToNext,
   verifyPassword
 );
-
-// PRIVATE ____________________________________________________________________________________________________
-app.use(verifyToken);
-
-app.post("/api/movies", verifyToken, validateMovie, movieHandlers.postMovie);
-app.put("/api/movies/:id", validateMovie, movieHandlers.updateMovie);
-app.delete("/api/movies/:id", movieHandlers.deleteMovie);
 app.post(
   "/api/users",
   verifyToken,
@@ -70,6 +63,13 @@ app.post(
   validateUser,
   userHandlers.postUser
 );
+
+// PRIVATE ____________________________________________________________________________________________________
+app.use(verifyToken);
+
+app.post("/api/movies", verifyToken, validateMovie, movieHandlers.postMovie);
+app.put("/api/movies/:id", validateMovie, movieHandlers.updateMovie);
+app.delete("/api/movies/:id", movieHandlers.deleteMovie);
 app.put(
   "/api/users/:id",
   verifyToken,
